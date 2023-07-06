@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="HNEnterpreneurDB" Class="HNEnterpreneurDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\HNEnterpreneurDB.mdf;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="HNEnterpreneurDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Bidding" Member="Biddings">
+    <Type Name="Bidding">
+      <Column Name="bidID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="quantity" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="maxPrice" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="urgency" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="deliveryDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="[desc]" Member="desc" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="status" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="ingID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Bidding_Quotation" Member="Quotations" ThisKey="bidID" OtherKey="bidID" Type="Quotation" />
+      <Association Name="Ingredient_Bidding" Member="Ingredient" ThisKey="ingID" OtherKey="ingID" Type="Ingredient" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Category" Member="Categories">
+    <Type Name="Category">
+      <Column Name="catId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="status" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="modifiedTime" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="modifiedDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="modifiedUser" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Category_Food" Member="Foods" ThisKey="catId" OtherKey="catId" Type="Food" />
+      <Association Name="User_Category" Member="User" ThisKey="modifiedUser" OtherKey="userId" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Food" Member="Foods">
+    <Type Name="Food">
+      <Column Name="foodId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="image" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="timeUsedSec" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="modifiedTime" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="modifiedDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="modifiedUser" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="catId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="reservedQty" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Food_Ing_list" Member="Ing_lists" ThisKey="foodId" OtherKey="foodID" Type="Ing_list" />
+      <Association Name="Food_Order_list" Member="Order_lists" ThisKey="foodId" OtherKey="foodId" Type="Order_list" />
+      <Association Name="Category_Food" Member="Category" ThisKey="catId" OtherKey="catId" Type="Category" IsForeignKey="true" />
+      <Association Name="User_Food" Member="User" ThisKey="modifiedUser" OtherKey="userId" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ing_list" Member="Ing_lists">
+    <Type Name="Ing_list">
+      <Column Name="ingID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="foodID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="qtyNeeded" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="Food_Ing_list" Member="Food" ThisKey="foodID" OtherKey="foodId" Type="Food" IsForeignKey="true" />
+      <Association Name="Ingredient_Ing_list" Member="Ingredient" ThisKey="ingID" OtherKey="ingID" Type="Ingredient" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ingredient" Member="Ingredients">
+    <Type Name="Ingredient">
+      <Column Name="ingID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[desc]" Member="desc" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="img" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="balance" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="balanceType" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="marketPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="Ingredient_Bidding" Member="Biddings" ThisKey="ingID" OtherKey="ingID" Type="Bidding" />
+      <Association Name="Ingredient_Ing_list" Member="Ing_lists" ThisKey="ingID" OtherKey="ingID" Type="Ing_list" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Order_list" Member="Order_lists">
+    <Type Name="Order_list">
+      <Column Name="foodId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="orderId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="status" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Association Name="Food_Order_list" Member="Food" ThisKey="foodId" OtherKey="foodId" Type="Food" IsForeignKey="true" />
+      <Association Name="Order_Order_list" Member="Order" ThisKey="orderId" OtherKey="orderId" Type="Order" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Quotation" Member="Quotations">
+    <Type Name="Quotation">
+      <Column Name="quoID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="quantity" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="bidID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="usrID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[desc]" Member="desc" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Association Name="Quotation_Transaction" Member="Transactions" ThisKey="quoID" OtherKey="quoID" Type="Transaction" />
+      <Association Name="Bidding_Quotation" Member="Bidding" ThisKey="bidID" OtherKey="bidID" Type="Bidding" IsForeignKey="true" />
+      <Association Name="Bidder_Quotation" Member="Bidder" ThisKey="usrID" OtherKey="usrID" Type="Bidder" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Transaction]" Member="Transactions">
+    <Type Name="Transaction">
+      <Column Name="traID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="receivedTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="status" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="quoID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="receivedUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Quotation_Transaction" Member="Quotation" ThisKey="quoID" OtherKey="quoID" Type="Quotation" IsForeignKey="true" />
+      <Association Name="User_Transaction" Member="User" ThisKey="receivedUser" OtherKey="userId" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Setting" Member="Settings">
+    <Type Name="Setting">
+      <Column Name="settingId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="setGSTRate" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="setCashPerPoint" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="setPointPerCash" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="modifiedTime" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="modifiedDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="modifiedUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FeasNotification" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="FeasVarifyAcc" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="companyName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="companySlogan" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="companyAddress" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="companyPhone" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="companyEmail" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="User_Setting" Member="User" ThisKey="modifiedUser" OtherKey="userId" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[User]" Member="Users">
+    <Type Name="User">
+      <Column Name="userId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="userType" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="regUserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="User_Category" Member="Categories" ThisKey="userId" OtherKey="modifiedUser" Type="Category" />
+      <Association Name="User_Food" Member="Foods" ThisKey="userId" OtherKey="modifiedUser" Type="Food" />
+      <Association Name="User_Transaction" Member="Transactions" ThisKey="userId" OtherKey="receivedUser" Type="Transaction" />
+      <Association Name="User_Setting" Member="Settings" ThisKey="userId" OtherKey="modifiedUser" Type="Setting" />
+      <Association Name="User_Address" Member="Addresses" ThisKey="userId" OtherKey="memId" Type="Address" />
+      <Association Name="User_Order" Member="Orders" ThisKey="userId" OtherKey="deliveryUserId" Type="Order" />
+      <Association Name="User_Member" Member="Members" ThisKey="userId" OtherKey="userId" Type="Member" />
+      <Association Name="User_Bidder" Member="Bidder" ThisKey="userId" OtherKey="usrID" Type="Bidder" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Address" Member="Addresses">
+    <Type Name="Address">
+      <Column Name="addressId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="line1" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="line2" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="city" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="postcode" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="state" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="country" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="contact" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="memId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Association Name="Address_Order" Member="Orders" ThisKey="addressId" OtherKey="addressId" Type="Order" />
+      <Association Name="User_Address" Member="User" ThisKey="memId" OtherKey="userId" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Order]" Member="Orders">
+    <Type Name="Order">
+      <Column Name="orderId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="orderDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="charges" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="discountPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="total" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="addressId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="preparationUserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="preparationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="pickingDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="deliveryUserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="deliveryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Order_Order_list" Member="Order_lists" ThisKey="orderId" OtherKey="orderId" Type="Order_list" />
+      <Association Name="Address_Order" Member="Address" ThisKey="addressId" OtherKey="addressId" Type="Address" IsForeignKey="true" />
+      <Association Name="User_Order" Member="User" ThisKey="deliveryUserId" OtherKey="userId" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Member" Member="Members">
+    <Type Name="Member">
+      <Column Name="memId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="point" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="userId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="loginDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="registerDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="User_Member" Member="User" ThisKey="userId" OtherKey="userId" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Bidder" Member="Bidders">
+    <Type Name="Bidder">
+      <Column Name="usrID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="delayTime" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="loginDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Bidder_Quotation" Member="Quotations" ThisKey="usrID" OtherKey="usrID" Type="Quotation" />
+      <Association Name="User_Bidder" Member="User" ThisKey="usrID" OtherKey="userId" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

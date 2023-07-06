@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 15.625, 8.5" name="HNEnterpreneurDB">
+  <DataContextMoniker Name="/HNEnterpreneurDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="fddaca9d-8e7a-46d0-9edf-e5a1cec424ac" absoluteBounds="2.5, 0.5, 2, 2.5401025390625">
+      <DataClassMoniker Name="/HNEnterpreneurDBDataContext/Bidding" />
+      <nestedChildShapes>
+        <elementListCompartment Id="00fe5548-6983-478e-a59a-4073c552f4ad" absoluteBounds="2.515, 0.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bb902811-58bf-4057-b5b3-2db5a7fdaa58" absoluteBounds="2.5, 3.125, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/HNEnterpreneurDBDataContext/Category" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c97820b7-c760-41f3-8e8b-7829743f22d4" absoluteBounds="2.515, 3.585, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4abc16a2-e160-4211-a6f5-0699018d0975" absoluteBounds="4.5, 0.5, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/HNEnterpreneurDBDataContext/Food" />
+      <nestedChildShapes>
+        <elementListCompartment Id="286782d7-57b1-4710-b22b-3b6010dc412d" absoluteBounds="4.515, 0.96, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.5 : 4.20274983723958); (5.20923076923077 : 4.20274983723958); (5.20923076923077 : 3.80930826822917)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HNEnterpreneurDBDataContext/Category/Category_Food" />
+      <nodes>
+        <classShapeMoniker Id="bb902811-58bf-4057-b5b3-2db5a7fdaa58" />
+        <classShapeMoniker Id="4abc16a2-e160-4211-a6f5-0699018d0975" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="b0d293a8-5dde-413d-a5d4-1913e20a741a" absoluteBounds="4.5, 3.875, 2, 1.3862939453125">
+      <DataClassMoniker Name="/HNEnterpreneurDBDataContext/Ing_list" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cf1035e7-651e-427d-8809-aed55dfe96ad" absoluteBounds="4.515, 4.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.88586538461539 : 3.80930826822917); (5.88586538461539 : 3.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HNEnterpreneurDBDataContext/Food/Food_Ing_list" />
+      <nodes>
+        <classShapeMoniker Id="4abc16a2-e160-4211-a6f5-0699018d0975" />
+        <classShapeMoniker Id="b0d293a8-5dde-413d-a5d4-1913e20a741a" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="50fecff0-9afb-429d-90df-de92dd342422" absoluteBounds="6.5, 0.5, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/HNEnterpreneurDBDataContext/Ingredient" />
+      <nestedChildShapes>
+        <elementListCompartment Id="06054bcc-8aad-4466-93f4-6a2c4c2a02a5" absoluteBounds="6.515, 0.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.5 : 0.5); (6.1875 : 0.1875); (5.58333333333333 : 0.187499999999999 : JumpStart); (5.41666666666667 : 0.1875 : JumpEnd); (4.84172976923077 : 0.1875); (4.5 : 0.529229769230769)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HNEnterpreneurDBDataContext/Ingredient/Ingredient_Bidding" />
+      <nodes>
+        <classShapeMoniker Id="50fecff0-9afb-429d-90df-de92dd342422" />
+        <classShapeMoniker Id="fddaca9d-8e7a-46d0-9edf-e5a1cec424ac" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.5 : 1.67390055338542); (6.49232 : 1.67390055338542); (6.49232 : 3.86732); (6.19293169230769 : 3.86732); (6.19293169230769 : 3.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HNEnterpreneurDBDataContext/Ingredient/Ingredient_Ing_list" />
+      <nodes>
+        <classShapeMoniker Id="50fecff0-9afb-429d-90df-de92dd342422" />
+        <classShapeMoniker Id="b0d293a8-5dde-413d-a5d4-1913e20a741a" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="f47405c5-de85-458b-ab62-dbaccb154231" absoluteBounds="8.5, 3.625, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/HNEnterpreneurDBDataContext/Order_list" />
+      <nestedChildShapes>
+        <elementListCompartment Id="da3de91b-246f-49f0-9b29-adca474ef97e" absoluteBounds="8.515, 4.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.496161 : 3.80930826822917); (5.496161 : 3.81698826822917); (6.50988 : 3.81698826822917); (6.50988 : 4.55101680989583); (8.49232 : 4.55101680989583); (8.49232 : 4.51044840494792); (8.5 : 4.51044840494792)]" fixedFrom="Algorithm" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HNEnterpreneurDBDataContext/Food/Food_Order_list" />
+      <nodes>
+        <classShapeMoniker Id="4abc16a2-e160-4211-a6f5-0699018d0975" />
+        <classShapeMoniker Id="f47405c5-de85-458b-ab62-dbaccb154231" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="dff87c1b-cd3f-4893-9ff2-a80071af03f0" absoluteBounds="10.5, 0.5, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/HNEnterpreneurDBDataContext/Quotation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a8b30cc0-16a3-424b-b10c-7288f9a1e2ea" absoluteBounds="10.515, 0.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.5 : 0.5); (4.625 : 0.375); (5.41666666666667 : 0.374999999999999 : JumpStart); (5.58333333333333 : 0.375 : JumpEnd); (6.29166666666667 : 0.374999999999999 : JumpStart); (6.45833333333333 : 0.375 : JumpEnd); (9.41666666666667 : 0.374999999999999 : JumpStart); (9.58333333333333 : 0.375 : JumpEnd); (10.375 : 0.375); (11.5 : 0.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HNEnterpreneurDBDataContext/Bidding/Bidding_Quotation" />
+      <nodes>
+        <classShapeMoniker Id="fddaca9d-8e7a-46d0-9edf-e5a1cec424ac" />
+        <classShapeMoniker Id="dff87c1b-cd3f-4893-9ff2-a80071af03f0" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="8a29ec19-b067-4d42-bcdc-713a80fe1601" absoluteBounds="12.5, 0.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/HNEnterpreneurDBDataContext/Transaction" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a7692eaa-ef1a-4435-a4a6-06c77d56b3f7" absoluteBounds="12.515, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(11.5 : 0.5); (11.5 : -0.125); (13.5 : -0.125); (13.5 : 0.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HNEnterpreneurDBDataContext/Quotation/Quotation_Transaction" />
+      <nodes>
+        <classShapeMoniker Id="dff87c1b-cd3f-4893-9ff2-a80071af03f0" />
+        <classShapeMoniker Id="8a29ec19-b067-4d42-bcdc-713a80fe1601" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="48f099c5-59ed-46a9-9488-cfc55d16a0e9" absoluteBounds="10.5, 2.875, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/HNEnterpreneurDBDataContext/Setting" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2e225ad3-e855-425f-9a55-3c1a307dc269" absoluteBounds="10.515, 3.335, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6257532b-0cc2-4795-ae4b-74db0c76f79e" absoluteBounds="12.5, 2.25, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/HNEnterpreneurDBDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="37ab24ce-41b8-4e82-8099-936fa9910196" absoluteBounds="12.515, 2.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(12.833983890625 : 4.40549967447917); (12.833983890625 : 6.62660970052083); (3.5 : 6.62660970052083); (3.5 : 5.28049967447917)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HNEnterpreneurDBDataContext/User/User_Category" />
+      <nodes>
+        <classShapeMoniker Id="6257532b-0cc2-4795-ae4b-74db0c76f79e" />
+        <classShapeMoniker Id="bb902811-58bf-4057-b5b3-2db5a7fdaa58" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(12.802732390625 : 4.40549967447917); (12.802732390625 : 5.03049967447917); (13.4830736354167 : 5.03049967447917 : JumpStart); (13.7161465208333 : 5.03049967447917 : JumpEnd); (14.4550666666667 : 5.03049967447917 : JumpStart); (14.6217333333333 : 5.03049967447917 : JumpEnd); (15 : 5.03049967447917); (15 : -0.375); (5.5 : -0.375); (5.5 : 0.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HNEnterpreneurDBDataContext/User/User_Food" />
+      <nodes>
+        <classShapeMoniker Id="6257532b-0cc2-4795-ae4b-74db0c76f79e" />
+        <classShapeMoniker Id="4abc16a2-e160-4211-a6f5-0699018d0975" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.5 : 3.32774983723958); (14.6666666666667 : 3.32774983723958 : JumpStart); (15.0833333333333 : 3.32774983723958 : JumpEnd); (15.125 : 3.32774983723958); (15.125 : 1.38544840494792); (15.0833333333333 : 1.38544840494792 : JumpStart); (14.6666666666667 : 1.38544840494792 : JumpEnd); (14.5 : 1.38544840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HNEnterpreneurDBDataContext/User/User_Transaction" />
+      <nodes>
+        <classShapeMoniker Id="6257532b-0cc2-4795-ae4b-74db0c76f79e" />
+        <classShapeMoniker Id="8a29ec19-b067-4d42-bcdc-713a80fe1601" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.6328131875 : 4.40549967447917); (13.6328131875 : 5.5785546875); (12.9173172239583 : 5.5785546875 : JumpStart); (12.7506505572917 : 5.5785546875 : JumpEnd); (12.5 : 5.5785546875)]" fixedFrom="Algorithm" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HNEnterpreneurDBDataContext/User/User_Setting" />
+      <nodes>
+        <classShapeMoniker Id="6257532b-0cc2-4795-ae4b-74db0c76f79e" />
+        <classShapeMoniker Id="48f099c5-59ed-46a9-9488-cfc55d16a0e9" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="b3328737-88c3-4653-9a1a-f45ab72ecb01" absoluteBounds="0.5, 0.5, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/HNEnterpreneurDBDataContext/Address" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f12960b1-2e0f-420f-a6f8-b68cf4043ea7" absoluteBounds="0.51500000000000012, 0.96, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(13.16796778125 : 4.40549967447917); (13.16796778125 : 4.78049967447917); (13.4830736354167 : 4.78049967447917 : JumpStart); (13.7161465208333 : 4.78049967447917 : JumpEnd); (14.4550666666667 : 4.78049967447917 : JumpStart); (14.6217333333333 : 4.78049967447917 : JumpEnd); (14.875 : 4.78049967447917); (14.875 : 0.125); (13.5833333333333 : 0.124999999999999 : JumpStart); (13.4166666666667 : 0.125 : JumpEnd); (11.5833333333333 : 0.124999999999999 : JumpStart); (11.4166666666667 : 0.125 : JumpEnd); (5.58333333333333 : 0.124999999999999 : JumpStart); (5.41666666666667 : 0.125 : JumpEnd); (1.5 : 0.125); (1.5 : 0.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HNEnterpreneurDBDataContext/User/User_Address" />
+      <nodes>
+        <classShapeMoniker Id="6257532b-0cc2-4795-ae4b-74db0c76f79e" />
+        <classShapeMoniker Id="b3328737-88c3-4653-9a1a-f45ab72ecb01" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="35d9d7dd-99b6-42ab-942f-35624d7159a5" absoluteBounds="8.5, 0.5, 2, 3.1170068359375">
+      <DataClassMoniker Name="/HNEnterpreneurDBDataContext/Order" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4f4cea03-35bf-4ff7-a306-5172ac126047" absoluteBounds="8.515, 0.96, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(9.5 : 3.6170068359375); (9.5 : 3.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HNEnterpreneurDBDataContext/Order/Order_Order_list" />
+      <nodes>
+        <classShapeMoniker Id="35d9d7dd-99b6-42ab-942f-35624d7159a5" />
+        <classShapeMoniker Id="f47405c5-de85-458b-ab62-dbaccb154231" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.5 : 0.532306692307692); (2.75105669230769 : 0.28125); (4.66464643589744 : 0.28125 : JumpStart); (4.8313131025641 : 0.28125 : JumpEnd); (5.41666666666667 : 0.28125 : JumpStart); (5.58333333333333 : 0.28125 : JumpEnd); (6.19791666666667 : 0.28125 : JumpStart); (6.36458333333333 : 0.28125 : JumpEnd); (8.28125 : 0.28125); (8.5 : 0.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HNEnterpreneurDBDataContext/Address/Address_Order" />
+      <nodes>
+        <classShapeMoniker Id="b3328737-88c3-4653-9a1a-f45ab72ecb01" />
+        <classShapeMoniker Id="35d9d7dd-99b6-42ab-942f-35624d7159a5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.09765859375 : 4.40549967447917); (14.09765859375 : 4.65549967447917); (14.4550666666667 : 4.65549967447917 : JumpStart); (14.6217333333333 : 4.65549967447917 : JumpEnd); (14.75 : 4.65549967447917); (14.75 : 0.25); (13.5833333333333 : 0.249999999999999 : JumpStart); (13.4166666666667 : 0.25 : JumpEnd); (11.5833333333333 : 0.249999999999999 : JumpStart); (11.4166666666667 : 0.25 : JumpEnd); (9.5 : 0.25); (9.5 : 0.5)]" fixedFrom="Algorithm" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HNEnterpreneurDBDataContext/User/User_Order" />
+      <nodes>
+        <classShapeMoniker Id="6257532b-0cc2-4795-ae4b-74db0c76f79e" />
+        <classShapeMoniker Id="35d9d7dd-99b6-42ab-942f-35624d7159a5" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="2467e89a-40de-4ffe-be0e-ca3ea356e6d4" absoluteBounds="6.5, 2.875, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/HNEnterpreneurDBDataContext/Member" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f57f132b-333e-4a53-975c-64f359795f0b" absoluteBounds="6.515, 3.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(13.56640696875 : 4.40549967447917); (13.56640696875 : 6.47900970052083); (12.9173172239583 : 6.47900970052083 : JumpStart); (12.7506505572917 : 6.47900970052083 : JumpEnd); (7.2214 : 6.47900970052083); (7.2214 : 3.9714); (7.9374995 : 3.9714); (7.9374995 : 4.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HNEnterpreneurDBDataContext/User/User_Member" />
+      <nodes>
+        <classShapeMoniker Id="6257532b-0cc2-4795-ae4b-74db0c76f79e" />
+        <classShapeMoniker Id="2467e89a-40de-4ffe-be0e-ca3ea356e6d4" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="021c3b4c-d621-482b-a708-6ede21bb7493" absoluteBounds="0.5, 3.375, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/HNEnterpreneurDBDataContext/Bidder" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e4f40c29-68c5-4ba7-bc31-16e78c5beafa" absoluteBounds="0.51499999999999968, 3.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(0.5 : 4.16429768880208); (0.125 : 4.16429768880208); (0.125 : 0); (5.41666666666667 : -5.8191389351823E-16 : JumpStart); (5.58333333333333 : 0 : JumpEnd); (11.5 : 0); (11.5 : 0.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HNEnterpreneurDBDataContext/Bidder/Bidder_Quotation" />
+      <nodes>
+        <classShapeMoniker Id="021c3b4c-d621-482b-a708-6ede21bb7493" />
+        <classShapeMoniker Id="dff87c1b-cd3f-4893-9ff2-a80071af03f0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.5 : 2.25); (13.5 : 2.2116); (14.5384 : 2.2116); (14.5384 : 6.30220970052083); (13.6497403020833 : 6.30220970052083 : JumpStart); (13.4830736354167 : 6.30220970052083 : JumpEnd); (12.9173172239583 : 6.30220970052083 : JumpStart); (12.7506505572917 : 6.30220970052083 : JumpEnd); (7.30473333333333 : 6.30220970052083 : JumpStart); (7.13806666666667 : 6.30220970052083 : JumpEnd); (3.58333333333333 : 6.30220970052083 : JumpStart); (3.41666666666667 : 6.30220970052083 : JumpEnd); (1.5 : 6.30220970052083); (1.5 : 4.95359537760417)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HNEnterpreneurDBDataContext/User/User_Bidder" />
+      <nodes>
+        <classShapeMoniker Id="6257532b-0cc2-4795-ae4b-74db0c76f79e" />
+        <classShapeMoniker Id="021c3b4c-d621-482b-a708-6ede21bb7493" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

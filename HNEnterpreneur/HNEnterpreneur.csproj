@@ -1,0 +1,1202 @@
+﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ECBDCAA1-C3E2-4B9D-B419-4263620BD3AE}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HNEnterpreneur</RootNamespace>
+    <AssemblyName>HNEnterpreneur</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\css\bootstrap-datepicker.css" />
+    <Content Include="assets\css\bootstrap.css" />
+    <Content Include="assets\css\font-awesome.css" />
+    <Content Include="assets\css\jquery.fancybox.css" />
+    <Content Include="assets\css\magnific-popup.css" />
+    <Content Include="assets\css\slick.css" />
+    <Content Include="assets\css\theme-color\blue-theme.css" />
+    <Content Include="assets\css\theme-color\dark-red-theme.css" />
+    <Content Include="assets\css\theme-color\default-theme.css" />
+    <Content Include="assets\css\theme-color\green-theme.css" />
+    <Content Include="assets\css\theme-color\orange-theme.css" />
+    <Content Include="assets\css\theme-color\pink-theme.css" />
+    <Content Include="assets\css\theme-color\purple-theme.css" />
+    <Content Include="assets\css\theme-color\red-theme.css" />
+    <Content Include="assets\css\theme-color\tan-theme.css" />
+    <Content Include="assets\css\theme-color\violet-theme.css" />
+    <Content Include="assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\img\about-us.png" />
+    <Content Include="assets\img\chef\accountant.jpg" />
+    <Content Include="assets\img\chef\chef-1.jpg" />
+    <Content Include="assets\img\chef\chef-2.jpg" />
+    <Content Include="assets\img\chef\chef-3.jpg" />
+    <Content Include="assets\img\chef\chef-4.jpg" />
+    <Content Include="assets\img\chef\chef-5.jpg" />
+    <Content Include="assets\img\chef\delivery.jpg" />
+    <Content Include="assets\img\chef\founder1.jpg" />
+    <Content Include="assets\img\chef\founder2.jpg" />
+    <Content Include="assets\img\counter-bg.jpeg" />
+    <Content Include="assets\img\favicon.ico" />
+    <Content Include="assets\img\gallery\1.jpg" />
+    <Content Include="assets\img\gallery\2.jpg" />
+    <Content Include="assets\img\gallery\3.jpg" />
+    <Content Include="assets\img\gallery\4.jpg" />
+    <Content Include="assets\img\gallery\5.jpg" />
+    <Content Include="assets\img\gallery\6.jpg" />
+    <Content Include="assets\img\gallery\7.jpg" />
+    <Content Include="assets\img\gallery\8.jpg" />
+    <Content Include="assets\img\gallery\9.jpg" />
+    <Content Include="assets\img\gallery\fancybox_buttons.png" />
+    <Content Include="assets\img\gallery\fancybox_loading%402x.gif" />
+    <Content Include="assets\img\gallery\fancybox_loading.gif" />
+    <Content Include="assets\img\gallery\fancybox_overlay.png" />
+    <Content Include="assets\img\gallery\fancybox_sprite%402x.png" />
+    <Content Include="assets\img\gallery\fancybox_sprite.png" />
+    <Content Include="assets\img\logo.png" />
+    <Content Include="assets\img\menu\item-1.jpg" />
+    <Content Include="assets\img\menu\item-10.jpg" />
+    <Content Include="assets\img\menu\item-2.jpg" />
+    <Content Include="assets\img\menu\item-3.jpg" />
+    <Content Include="assets\img\menu\item-4.jpg" />
+    <Content Include="assets\img\menu\item-5.jpg" />
+    <Content Include="assets\img\menu\item-6.jpg" />
+    <Content Include="assets\img\menu\item-7.jpg" />
+    <Content Include="assets\img\menu\item-8.jpg" />
+    <Content Include="assets\img\menu\item-9.jpg" />
+    <Content Include="assets\img\plus.png" />
+    <Content Include="assets\img\slider\1.jpeg" />
+    <Content Include="assets\img\slider\2.jpeg" />
+    <Content Include="assets\img\slider\3.jpeg" />
+    <Content Include="assets\img\slider\ajax-loader.gif" />
+    <Content Include="assets\img\testimonial-1.png" />
+    <Content Include="assets\img\testimonial-2.png" />
+    <Content Include="assets\img\testimonial-3.png" />
+    <Content Include="assets\img\testimonial-bg.jpg" />
+    <Content Include="assets\js\app.js" />
+    <Content Include="assets\js\bootstrap-datepicker.js" />
+    <Content Include="assets\js\bootstrap.js" />
+    <Content Include="assets\js\custom.js" />
+    <Content Include="assets\js\jquery.magnific-popup.min.js" />
+    <Content Include="assets\js\jquery.min.js" />
+    <Content Include="assets\js\simple-animated-counter.js" />
+    <Content Include="assets\js\slick.js" />
+    <Content Include="bin\HNEnterpreneur.dll" />
+    <Content Include="bin\HNEnterpreneur.pdb" />
+    <Content Include="CheckoutS1.aspx" />
+    <Content Include="CheckoutS2.aspx" />
+    <Content Include="CheckoutS3.aspx" />
+    <Content Include="css\Checkout.css" />
+    <Content Include="css\sb-admin.css" />
+    <Content Include="css\sb-admin.min.css" />
+    <Content Include="css\tempusdominus-bootstrap-4.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Images\FoodImg\07ae20d36ebd41729aea25eaf8ed87d3.jpg" />
+    <Content Include="Images\FoodImg\0b9487b853924909babf979e0355d1ed.jpg" />
+    <Content Include="Images\FoodImg\12135fa539fb4299842f22cadbf18e29.jpg" />
+    <Content Include="Images\FoodImg\29af2c95635b49cd83c3e55c9f60caea.jpg" />
+    <Content Include="Images\FoodImg\3ded0b55840842edbf27c7077113aedb.jpg" />
+    <Content Include="Images\FoodImg\3f6988e554d5457aa6059298c7da77bd.jpg" />
+    <Content Include="Images\FoodImg\4a5bb2c07ab449c4a83b8a7486fc2af0.jpg" />
+    <Content Include="Images\FoodImg\4beb57206e9e48a6a925406d59c8bd60.jpg" />
+    <Content Include="Images\FoodImg\67ee5e5d14f64ce5ac3eaa161c1d78cc.jpg" />
+    <Content Include="Images\FoodImg\9a30b816561645aaaf6fe8d39ae6610e.jpg" />
+    <Content Include="Images\FoodImg\a98d075b481b40b789c9c57acaf169d4.jpg" />
+    <Content Include="Images\FoodImg\bc7d6fb6763e4e6aba398aeeec226fb0.jpg" />
+    <Content Include="Images\FoodImg\c70d023aaed04e97af3a507f21072c79.jpg" />
+    <Content Include="Images\FoodImg\c90984996ef64955aa51f4f1d2219d35.jpg" />
+    <Content Include="Images\FoodImg\c9ba86de567647cc96901085a2c875c1.jpg" />
+    <Content Include="Images\FoodImg\f3a6da04b96947f4b95841e34666b481.jpg" />
+    <Content Include="Images\FoodImg\noImg.jpg" />
+    <Content Include="Images\IngredientImg\0d7d4524385e4a17a2043ff0671f5eb5.jpg" />
+    <Content Include="Images\IngredientImg\0e5af6de007c454dbb0f8dc411ba61bd.jpg" />
+    <Content Include="Images\IngredientImg\1747720e8c1e4036a6112243d536293f.jpg" />
+    <Content Include="Images\IngredientImg\20642c7c597642c2b9bf48f10c148b7d.jpg" />
+    <Content Include="Images\IngredientImg\238e923e28d24fce982e3dfbb859e399.jpg" />
+    <Content Include="Images\IngredientImg\29c8c5a5658b4cedbf04534ca647676a.jpg" />
+    <Content Include="Images\IngredientImg\2a03fedebf354abda2c0f8978e73a523.jpg" />
+    <Content Include="Images\IngredientImg\2c9a323607c34de8897e6e7b5722085d.jpg" />
+    <Content Include="Images\IngredientImg\2cfe353b1e5549a991ba40121aa65dff.jpg" />
+    <Content Include="Images\IngredientImg\2faa5d63e33e44f2bc01aaab9656a05c.jpg" />
+    <Content Include="Images\IngredientImg\31e6dd4e12f141ce8de7f2b93f35bc9c.jpg" />
+    <Content Include="Images\IngredientImg\368c204aacce4632a40d38dcf6f05737.jpg" />
+    <Content Include="Images\IngredientImg\39f09c60f97447fbbfa0b38d259e4e07.jpg" />
+    <Content Include="Images\IngredientImg\3aee625bca24475fa3590cec195fc2c5.jpg" />
+    <Content Include="Images\IngredientImg\400c22731bdb4c5198b2152b55cb987f.jpg" />
+    <Content Include="Images\IngredientImg\4219597b6082467dbb97a5878f46692c.jpg" />
+    <Content Include="Images\IngredientImg\45e681e853544aa28b3e5add5ac6d00e.jpg" />
+    <Content Include="Images\IngredientImg\4ab437aaae684de185f9afc945f291a7.jpg" />
+    <Content Include="Images\IngredientImg\4b8cd8fb9f4c44488f421abe960bf1d8.jpg" />
+    <Content Include="Images\IngredientImg\4cd917e36d734861b73da78d26cf22e3.jpg" />
+    <Content Include="Images\IngredientImg\5ab12251b5624faab10345ea18112b12.jpg" />
+    <Content Include="Images\IngredientImg\5af452e17c9942a8a1564d2fe1e6ff1b.jpg" />
+    <Content Include="Images\IngredientImg\6988105cc6294cf298643b107c165d59.jpg" />
+    <Content Include="Images\IngredientImg\798a57d52f0d4bdb9e6f028d69acb911.jpg" />
+    <Content Include="Images\IngredientImg\7d05b9c1636a4b349823973a578081c4.jpg" />
+    <Content Include="Images\IngredientImg\7d2acd4307524063bf54f218589b485f.jpg" />
+    <Content Include="Images\IngredientImg\7df0400d011a4cd2985e662aa682cb8f.jpg" />
+    <Content Include="Images\IngredientImg\85a047bf65a74704a57d43a7582c5b49.jpg" />
+    <Content Include="Images\IngredientImg\90b9a378290f4648b89c6c007535c521.jpg" />
+    <Content Include="Images\IngredientImg\93392e313aa740afa210bdbc0bd1fdd2.jpg" />
+    <Content Include="Images\IngredientImg\9e2e2ff85c5648e1928f3adcf54e7de6.jpg" />
+    <Content Include="Images\IngredientImg\a06fde4c12f7446899af0297df646e4d.jpg" />
+    <Content Include="Images\IngredientImg\aba04a08b839462b84ad0e09cb9de057.jpg" />
+    <Content Include="Images\IngredientImg\b1248c8edf6f4849930610d901ecf7a2.jpg" />
+    <Content Include="Images\IngredientImg\c3396cff3bd44de899d74be5850e657e.jpg" />
+    <Content Include="Images\IngredientImg\c887acf72a9d4bdebe659ecf79807cb6.jpg" />
+    <Content Include="Images\IngredientImg\d877376c44bc41a880bd852131309b9c.jpg" />
+    <Content Include="Images\IngredientImg\ded1752e7eee4c188646d20fe7a56f73.jpg" />
+    <Content Include="Images\IngredientImg\ececdbdeab1b463cbe97c4de8117ee1a.jpg" />
+    <Content Include="Images\IngredientImg\f2a20645f2d944399bb1b9beda2c49f3.jpg" />
+    <Content Include="Images\IngredientImg\f2aa8239a4624b7d96400f430ea3055d.jpg" />
+    <Content Include="Images\IngredientImg\f4855880d21145b7bae19992419a4d1b.jpg" />
+    <Content Include="Images\IngredientImg\f67ba312985d43ba8a74ead6db9293eb.jpg" />
+    <Content Include="Images\IngredientImg\fc89a3ce62ea423caadf9b9cb16a8dd1.jpg" />
+    <Content Include="Images\IngredientImg\noImg.jpg" />
+    <Content Include="Images\System\favicon.ico" />
+    <Content Include="Images\System\logo.png" />
+    <Content Include="Images\System\uploadImg.jpg" />
+    <Content Include="index.aspx" />
+    <Content Include="js\1.9.4-jquery.dataTables.min.js" />
+    <Content Include="js\bootstrap-confirmation.min.js" />
+    <Content Include="js\KitchenDatatable.js" />
+    <Content Include="js\sb-admin-charts.js" />
+    <Content Include="js\sb-admin-charts.min.js" />
+    <Content Include="js\sb-admin-datatables.js" />
+    <Content Include="js\sb-admin-datatables.min.js" />
+    <Content Include="js\sb-admin.js" />
+    <Content Include="js\sb-admin.min.js" />
+    <Content Include="js\tempusdominus-bootstrap-4.js.js" />
+    <Content Include="Main.Master" />
+    <Content Include="HNEnterpreneurDB.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>HNEnterpreneurDB.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="OnlyAdmin\Admin.Master" />
+    <Content Include="OnlyAdmin\AdminAccBanned.aspx" />
+    <Content Include="OnlyAdmin\AdminCateBanned.aspx" />
+    <Content Include="OnlyAdmin\AdminFoodBanned.aspx" />
+    <Content Include="OnlyAdmin\AdminIndex.aspx" />
+    <Content Include="OnlyAdmin\AdminOrderBanned.aspx" />
+    <Content Include="OnlyAdmin\AdminOrderReceipt.aspx" />
+    <Content Include="OnlyAdmin\DetailReport.aspx" />
+    <Content Include="OnlyAdmin\ExceptionReport.aspx" />
+    <Content Include="OnlyAdmin\ForecastingReport.aspx" />
+    <Content Include="OnlyAdmin\IngredientBanned.aspx" />
+    <Content Include="OnlyAdmin\ProductAnalyst.aspx" />
+    <Content Include="OnlyAdmin\ReportCustomization.aspx" />
+    <Content Include="OnlyAdmin\ReportIngredientManagement.aspx" />
+    <Content Include="OnlyAdmin\ReportInventoryBalance.aspx" />
+    <Content Include="OnlyAdmin\ReportIRF.aspx" />
+    <Content Include="OnlyAdmin\ReportMS.aspx" />
+    <Content Include="OnlyAdmin\ReportSB.aspx" />
+    <Content Include="OnlyAdmin\SummaryReport.aspx" />
+    <Content Include="OnlyAdmin\TESTorderSCRIPT.aspx" />
+    <Content Include="OnlyCStaff\index.aspx" />
+    <Content Include="OnlyCStaff\StockRefill.aspx" />
+    <Content Include="OnlyDStaff\DSHistory.aspx" />
+    <Content Include="OnlyDStaff\DSRouting.aspx" />
+    <Content Include="OnlyDStaff\index.aspx" />
+    <Content Include="OnlyDStaff\OrderPickUp.aspx" />
+    <Content Include="OnlyPStaff\index.aspx" />
+    <Content Include="OnlyPStaff\OrderPreparationDetails.aspx" />
+    <Content Include="OnlyPStaff\PreparationHistory.aspx" />
+    <Content Include="OnlyPStaff\PreparationReceipt.aspx" />
+    <Content Include="OnlyStoreAdmin\BiddingDetail.aspx" />
+    <Content Include="OnlyStoreAdmin\BiddingFailed.aspx" />
+    <Content Include="OnlyStoreAdmin\BiddingHistory.aspx" />
+    <Content Include="OnlyStoreAdmin\BiddingList.aspx" />
+    <Content Include="OnlyStoreAdmin\IngredientForecastedReport.aspx" />
+    <Content Include="OnlyStoreAdmin\IngredientList.aspx" />
+    <Content Include="OnlyStoreAdmin\IngredientStockStatusSummary.aspx" />
+    <Content Include="OnlyStoreAdmin\OrderHistory.aspx" />
+    <Content Include="OnlyStoreAdmin\OrderNew.aspx" />
+    <Content Include="OnlyStoreAdmin\SAindex.aspx" />
+    <Content Include="OnlyStoreAdmin\SAIngredientBid.aspx" />
+    <Content Include="OnlyStoreAdmin\SAIngredientList.aspx" />
+    <Content Include="OnlyStoreAdmin\StockReceived.aspx" />
+    <Content Include="OnlyStoreAdmin\Store.Master" />
+    <Content Include="OnlySupplier\BiddingAvailable.aspx" />
+    <Content Include="OnlySupplier\DeliveryScheduling.aspx" />
+    <Content Include="OnlySupplier\index.aspx" />
+    <Content Include="OnlySupplier\sIngredientList.aspx" />
+    <Content Include="OnlySupplier\Supplier.Master" />
+    <Content Include="OnlyDStaff\DeliveryStaff.Master" />
+    <Content Include="OnlyCStaff\CookingStaff.Master" />
+    <Content Include="OnlyAdmin\Web.config" />
+    <Content Include="OnlyCStaff\Web.config" />
+    <Content Include="OnlyDStaff\Web.config" />
+    <Content Include="OnlyPStaff\Web.config" />
+    <Content Include="OnlyStoreAdmin\Web.config" />
+    <Content Include="OnlySupplier\Web.config" />
+    <Content Include="OnlyPStaff\PreparationStaff.Master" />
+    <Content Include="assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="assets\fonts\FontAwesome.otf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\mysnacks - Web Deploy.pubxml" />
+    <Content Include="OnlyAdmin\readme.txt" />
+    <Content Include="vendor\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="vendor\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="vendor\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="vendor\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="vendor\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="vendor\font-awesome\less\animated.less" />
+    <Content Include="vendor\font-awesome\less\bordered-pulled.less" />
+    <Content Include="vendor\font-awesome\less\core.less" />
+    <Content Include="vendor\font-awesome\less\fixed-width.less" />
+    <Content Include="vendor\font-awesome\less\font-awesome.less" />
+    <Content Include="vendor\font-awesome\less\icons.less" />
+    <Content Include="vendor\font-awesome\less\larger.less" />
+    <Content Include="vendor\font-awesome\less\list.less" />
+    <Content Include="vendor\font-awesome\less\mixins.less" />
+    <Content Include="vendor\font-awesome\less\path.less" />
+    <Content Include="vendor\font-awesome\less\rotated-flipped.less" />
+    <Content Include="vendor\font-awesome\less\screen-reader.less" />
+    <Content Include="vendor\font-awesome\less\stacked.less" />
+    <Content Include="vendor\font-awesome\less\variables.less" />
+    <Content Include="vendor\font-awesome\scss\font-awesome.scss" />
+    <Content Include="vendor\font-awesome\scss\_animated.scss" />
+    <Content Include="vendor\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="vendor\font-awesome\scss\_core.scss" />
+    <Content Include="vendor\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="vendor\font-awesome\scss\_icons.scss" />
+    <Content Include="vendor\font-awesome\scss\_larger.scss" />
+    <Content Include="vendor\font-awesome\scss\_list.scss" />
+    <Content Include="vendor\font-awesome\scss\_mixins.scss" />
+    <Content Include="vendor\font-awesome\scss\_path.scss" />
+    <Content Include="vendor\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="vendor\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="vendor\font-awesome\scss\_stacked.scss" />
+    <Content Include="vendor\font-awesome\scss\_variables.scss" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\HNEnterpreneurDB.mdf" />
+    <Content Include="App_Data\HNEnterpreneurDB_log.ldf">
+      <DependentUpon>HNEnterpreneurDB.mdf</DependentUpon>
+    </Content>
+    <Content Include="css\animate.min.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\flexslider.css" />
+    <Content Include="css\jquery-ui.css" />
+    <Content Include="css\jquery.countdown.css" />
+    <Content Include="css\style.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Home.aspx" />
+    <Content Include="Images\bag-.png" />
+    <Content Include="Images\bag.png" />
+    <Content Include="Images\check.png" />
+    <Content Include="Images\close_1.png" />
+    <Content Include="js\bootstrap-3.1.1.min.js" />
+    <Content Include="js\classie.js" />
+    <Content Include="js\imagezoom.js" />
+    <Content Include="js\jquery-ui.min.js" />
+    <Content Include="js\jquery.countdown.js" />
+    <Content Include="js\jquery.flexslider.js" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\jquery.wmuSlider.js" />
+    <Content Include="js\script.js" />
+    <Content Include="js\simpleCart.min.js" />
+    <Content Include="js\uisearch.js" />
+    <Content Include="js\wow.min.js" />
+    <Content Include="OnlyAdmin\AdminAccDetail.aspx" />
+    <Content Include="OnlyAdmin\AdminAccList.aspx" />
+    <Content Include="OnlyAdmin\AdminAddCategory.aspx" />
+    <Content Include="OnlyAdmin\AdminCateDetail.aspx" />
+    <Content Include="OnlyAdmin\AdminCateList.aspx" />
+    <Content Include="OnlyAdmin\AdminFoodAdd.aspx" />
+    <Content Include="OnlyAdmin\AdminFoodDetail.aspx" />
+    <Content Include="OnlyAdmin\AdminFoodList.aspx" />
+    <Content Include="OnlyAdmin\AdminOrderDetail.aspx" />
+    <Content Include="OnlyAdmin\AdminOrderList.aspx" />
+    <Content Include="OnlyAdmin\AdminRegisterAcc.aspx" />
+    <Content Include="OnlyAdmin\IngredientAdd.aspx" />
+    <Content Include="OnlyAdmin\IngredientAnalyst.aspx" />
+    <Content Include="OnlyAdmin\IngredientBid.aspx" />
+    <Content Include="OnlyAdmin\IngredientDetail.aspx" />
+    <Content Include="OnlyAdmin\IngredientFoodAdd.aspx" />
+    <Content Include="OnlyAdmin\IngredientFoodEdit.aspx" />
+    <Content Include="OnlyAdmin\IngredientFoodLink.aspx" />
+    <Content Include="OnlyAdmin\IngredientList.aspx" />
+    <Content Include="OnlySupplier\SupplierBidding.aspx" />
+    <Content Include="OnlySupplier\SupplierBiddingAdd.aspx" />
+    <Content Include="OnlySupplier\SupplierBiddingDetail.aspx" />
+    <Content Include="OnlySupplier\SupplierBiddingN.aspx" />
+    <Content Include="OnlySupplier\SupplierOrderHistory.aspx" />
+    <Content Include="OnlySupplier\SupplierProfile.aspx" />
+    <Content Include="OrderCancellation.aspx" />
+    <Content Include="OrderReceipt.aspx" />
+    <Content Include="Products.aspx" />
+    <Content Include="ProfileChangePassword.aspx" />
+    <Content Include="ProfileDeliveryAddress.aspx" />
+    <Content Include="ProfileMemberPoint.aspx" />
+    <Content Include="ProfileMyOrders.aspx" />
+    <Content Include="ProfileReports.aspx" />
+    <Content Include="ShoppingCart.aspx" />
+    <Content Include="style.css" />
+    <Content Include="SystemForgotPassword.aspx" />
+    <Content Include="SystemLogin.aspx" />
+    <Content Include="SystemLogout.aspx" />
+    <Content Include="SystemRegister.aspx" />
+    <Content Include="SystemResetPassword.aspx" />
+    <Content Include="vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="vendor\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="vendor\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="vendor\calendar\fullcalendar.min.js" />
+    <Content Include="vendor\calendar\jquery.js" />
+    <Content Include="vendor\calendar\moment.min.js" />
+    <Content Include="vendor\chart.js\Chart.bundle.js" />
+    <Content Include="vendor\chart.js\Chart.bundle.min.js" />
+    <Content Include="vendor\chart.js\Chart.js" />
+    <Content Include="vendor\chart.js\Chart.min.js" />
+    <Content Include="vendor\datatables\dataTables.bootstrap4.css" />
+    <Content Include="vendor\datatables\dataTables.bootstrap4.js" />
+    <Content Include="vendor\datatables\jquery.dataTables.js" />
+    <Content Include="vendor\font-awesome\css\font-awesome.css" />
+    <Content Include="vendor\font-awesome\css\font-awesome.min.css" />
+    <Content Include="vendor\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="vendor\jquery-easing\jquery.easing.compatibility.js" />
+    <Content Include="vendor\jquery-easing\jquery.easing.js" />
+    <Content Include="vendor\jquery-easing\jquery.easing.min.js" />
+    <Content Include="vendor\jquery\jquery.js" />
+    <Content Include="vendor\jquery\jquery.min.js" />
+    <Content Include="vendor\moment.js" />
+    <Content Include="vendor\tempusdominus-bootstrap-4.min.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CheckoutS1.aspx.cs">
+      <DependentUpon>CheckoutS1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CheckoutS1.aspx.designer.cs">
+      <DependentUpon>CheckoutS1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CheckoutS2.aspx.cs">
+      <DependentUpon>CheckoutS2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CheckoutS2.aspx.designer.cs">
+      <DependentUpon>CheckoutS2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CheckoutS3.aspx.cs">
+      <DependentUpon>CheckoutS3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CheckoutS3.aspx.designer.cs">
+      <DependentUpon>CheckoutS3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="HNEnterpreneurDB.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HNEnterpreneurDB.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="HNEnterpreneurSecurity.cs" />
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Main.Master.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main.Master.designer.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="obj\Release\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Release\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Release\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="OnlyAdmin\Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyAdmin\Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyAdmin\AdminAccBanned.aspx.cs">
+      <DependentUpon>AdminAccBanned.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyAdmin\AdminAccBanned.aspx.designer.cs">
+      <DependentUpon>AdminAccBanned.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyAdmin\AdminAccDetail.aspx.cs">
+      <DependentUpon>AdminAccDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyAdmin\AdminAccDetail.aspx.designer.cs">
+      <DependentUpon>AdminAccDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyAdmin\AdminAccList.aspx.cs">
+      <DependentUpon>AdminAccList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyAdmin\AdminAccList.aspx.designer.cs">
+      <DependentUpon>AdminAccList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyAdmin\AdminAddCategory.aspx.cs">
+      <DependentUpon>AdminAddCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyAdmin\AdminAddCategory.aspx.designer.cs">
+      <DependentUpon>AdminAddCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyAdmin\AdminCateBanned.aspx.cs">
+      <DependentUpon>AdminCateBanned.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyAdmin\AdminCateBanned.aspx.designer.cs">
+      <DependentUpon>AdminCateBanned.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyAdmin\AdminCateDetail.aspx.cs">
+      <DependentUpon>AdminCateDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyAdmin\AdminCateDetail.aspx.designer.cs">
+      <DependentUpon>AdminCateDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyAdmin\AdminCateList.aspx.cs">
+      <DependentUpon>AdminCateList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyAdmin\AdminCateList.aspx.designer.cs">
+      <DependentUpon>AdminCateList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyAdmin\AdminFoodAdd.aspx.cs">
+      <DependentUpon>AdminFoodAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyAdmin\AdminFoodAdd.aspx.designer.cs">
+      <DependentUpon>AdminFoodAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyAdmin\AdminFoodBanned.aspx.cs">
+      <DependentUpon>AdminFoodBanned.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyAdmin\AdminFoodBanned.aspx.designer.cs">
+      <DependentUpon>AdminFoodBanned.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyAdmin\AdminFoodDetail.aspx.cs">
+      <DependentUpon>AdminFoodDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyAdmin\AdminFoodDetail.aspx.designer.cs">
+      <DependentUpon>AdminFoodDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyAdmin\AdminFoodList.aspx.cs">
+      <DependentUpon>AdminFoodList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyAdmin\AdminFoodList.aspx.designer.cs">
+      <DependentUpon>AdminFoodList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyAdmin\AdminIndex.aspx.cs">
+      <DependentUpon>AdminIndex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyAdmin\AdminIndex.aspx.designer.cs">
+      <DependentUpon>AdminIndex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyAdmin\AdminOrderBanned.aspx.cs">
+      <DependentUpon>AdminOrderBanned.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyAdmin\AdminOrderBanned.aspx.designer.cs">
+      <DependentUpon>AdminOrderBanned.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyAdmin\AdminOrderDetail.aspx.cs">
+      <DependentUpon>AdminOrderDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyAdmin\AdminOrderDetail.aspx.designer.cs">
+      <DependentUpon>AdminOrderDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyAdmin\AdminOrderList.aspx.cs">
+      <DependentUpon>AdminOrderList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyAdmin\AdminOrderList.aspx.designer.cs">
+      <DependentUpon>AdminOrderList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyAdmin\AdminOrderReceipt.aspx.cs">
+      <DependentUpon>AdminOrderReceipt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyAdmin\AdminOrderReceipt.aspx.designer.cs">
+      <DependentUpon>AdminOrderReceipt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyAdmin\AdminRegisterAcc.aspx.cs">
+      <DependentUpon>AdminRegisterAcc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyAdmin\AdminRegisterAcc.aspx.designer.cs">
+      <DependentUpon>AdminRegisterAcc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyAdmin\DetailReport.aspx.cs">
+      <DependentUpon>DetailReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyAdmin\DetailReport.aspx.designer.cs">
+      <DependentUpon>DetailReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyAdmin\ExceptionReport.aspx.cs">
+      <DependentUpon>ExceptionReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyAdmin\ExceptionReport.aspx.designer.cs">
+      <DependentUpon>ExceptionReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyAdmin\ForecastingReport.aspx.cs">
+      <DependentUpon>ForecastingReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyAdmin\ForecastingReport.aspx.designer.cs">
+      <DependentUpon>ForecastingReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyAdmin\IngredientAdd.aspx.cs">
+      <DependentUpon>IngredientAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyAdmin\IngredientAdd.aspx.designer.cs">
+      <DependentUpon>IngredientAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyAdmin\IngredientAnalyst.aspx.cs">
+      <DependentUpon>IngredientAnalyst.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyAdmin\IngredientAnalyst.aspx.designer.cs">
+      <DependentUpon>IngredientAnalyst.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyAdmin\IngredientBanned.aspx.cs">
+      <DependentUpon>IngredientBanned.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyAdmin\IngredientBanned.aspx.designer.cs">
+      <DependentUpon>IngredientBanned.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyAdmin\IngredientBid.aspx.cs">
+      <DependentUpon>IngredientBid.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyAdmin\IngredientBid.aspx.designer.cs">
+      <DependentUpon>IngredientBid.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyAdmin\IngredientDetail.aspx.cs">
+      <DependentUpon>IngredientDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyAdmin\IngredientDetail.aspx.designer.cs">
+      <DependentUpon>IngredientDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyAdmin\IngredientFoodAdd.aspx.cs">
+      <DependentUpon>IngredientFoodAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyAdmin\IngredientFoodAdd.aspx.designer.cs">
+      <DependentUpon>IngredientFoodAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyAdmin\IngredientFoodEdit.aspx.cs">
+      <DependentUpon>IngredientFoodEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyAdmin\IngredientFoodEdit.aspx.designer.cs">
+      <DependentUpon>IngredientFoodEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyAdmin\IngredientFoodLink.aspx.cs">
+      <DependentUpon>IngredientFoodLink.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyAdmin\IngredientFoodLink.aspx.designer.cs">
+      <DependentUpon>IngredientFoodLink.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyAdmin\IngredientList.aspx.cs">
+      <DependentUpon>IngredientList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyAdmin\IngredientList.aspx.designer.cs">
+      <DependentUpon>IngredientList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyAdmin\ProductAnalyst.aspx.cs">
+      <DependentUpon>ProductAnalyst.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyAdmin\ProductAnalyst.aspx.designer.cs">
+      <DependentUpon>ProductAnalyst.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyAdmin\ReportCustomization.aspx.cs">
+      <DependentUpon>ReportCustomization.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyAdmin\ReportCustomization.aspx.designer.cs">
+      <DependentUpon>ReportCustomization.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyAdmin\ReportIngredientManagement.aspx.cs">
+      <DependentUpon>ReportIngredientManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyAdmin\ReportIngredientManagement.aspx.designer.cs">
+      <DependentUpon>ReportIngredientManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyAdmin\ReportInventoryBalance.aspx.cs">
+      <DependentUpon>ReportInventoryBalance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyAdmin\ReportInventoryBalance.aspx.designer.cs">
+      <DependentUpon>ReportInventoryBalance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyAdmin\ReportIRF.aspx.cs">
+      <DependentUpon>ReportIRF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyAdmin\ReportIRF.aspx.designer.cs">
+      <DependentUpon>ReportIRF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyAdmin\ReportMS.aspx.cs">
+      <DependentUpon>ReportMS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyAdmin\ReportMS.aspx.designer.cs">
+      <DependentUpon>ReportMS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyAdmin\ReportSB.aspx.cs">
+      <DependentUpon>ReportSB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyAdmin\ReportSB.aspx.designer.cs">
+      <DependentUpon>ReportSB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyAdmin\SummaryReport.aspx.cs">
+      <DependentUpon>SummaryReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyAdmin\SummaryReport.aspx.designer.cs">
+      <DependentUpon>SummaryReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyAdmin\TESTorderSCRIPT.aspx.cs">
+      <DependentUpon>TESTorderSCRIPT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyAdmin\TESTorderSCRIPT.aspx.designer.cs">
+      <DependentUpon>TESTorderSCRIPT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyCStaff\CookingStaff.Master.cs">
+      <DependentUpon>CookingStaff.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyCStaff\CookingStaff.Master.designer.cs">
+      <DependentUpon>CookingStaff.Master</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyCStaff\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyCStaff\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyCStaff\StockRefill.aspx.cs">
+      <DependentUpon>StockRefill.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyCStaff\StockRefill.aspx.designer.cs">
+      <DependentUpon>StockRefill.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyDStaff\DeliveryStaff.Master.cs">
+      <DependentUpon>DeliveryStaff.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyDStaff\DeliveryStaff.Master.designer.cs">
+      <DependentUpon>DeliveryStaff.Master</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyDStaff\DSHistory.aspx.cs">
+      <DependentUpon>DSHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyDStaff\DSHistory.aspx.designer.cs">
+      <DependentUpon>DSHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyDStaff\DSRouting.aspx.cs">
+      <DependentUpon>DSRouting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyDStaff\DSRouting.aspx.designer.cs">
+      <DependentUpon>DSRouting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyDStaff\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyDStaff\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyDStaff\OrderPickUp.aspx.cs">
+      <DependentUpon>OrderPickUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyDStaff\OrderPickUp.aspx.designer.cs">
+      <DependentUpon>OrderPickUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyPStaff\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyPStaff\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyPStaff\OrderPreparationDetails.aspx.cs">
+      <DependentUpon>OrderPreparationDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyPStaff\OrderPreparationDetails.aspx.designer.cs">
+      <DependentUpon>OrderPreparationDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyPStaff\PreparationHistory.aspx.cs">
+      <DependentUpon>PreparationHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyPStaff\PreparationHistory.aspx.designer.cs">
+      <DependentUpon>PreparationHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyPStaff\PreparationReceipt.aspx.cs">
+      <DependentUpon>PreparationReceipt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyPStaff\PreparationReceipt.aspx.designer.cs">
+      <DependentUpon>PreparationReceipt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyPStaff\PreparationStaff.Master.cs">
+      <DependentUpon>PreparationStaff.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyPStaff\PreparationStaff.Master.designer.cs">
+      <DependentUpon>PreparationStaff.Master</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyStoreAdmin\BiddingDetail.aspx.cs">
+      <DependentUpon>BiddingDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyStoreAdmin\BiddingDetail.aspx.designer.cs">
+      <DependentUpon>BiddingDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyStoreAdmin\BiddingFailed.aspx.cs">
+      <DependentUpon>BiddingFailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyStoreAdmin\BiddingFailed.aspx.designer.cs">
+      <DependentUpon>BiddingFailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyStoreAdmin\BiddingHistory.aspx.cs">
+      <DependentUpon>BiddingHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyStoreAdmin\BiddingHistory.aspx.designer.cs">
+      <DependentUpon>BiddingHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyStoreAdmin\BiddingList.aspx.cs">
+      <DependentUpon>BiddingList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyStoreAdmin\BiddingList.aspx.designer.cs">
+      <DependentUpon>BiddingList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyStoreAdmin\IngredientForecastedReport.aspx.cs">
+      <DependentUpon>IngredientForecastedReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyStoreAdmin\IngredientForecastedReport.aspx.designer.cs">
+      <DependentUpon>IngredientForecastedReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyStoreAdmin\IngredientList.aspx.cs">
+      <DependentUpon>IngredientList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyStoreAdmin\IngredientList.aspx.designer.cs">
+      <DependentUpon>IngredientList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyStoreAdmin\IngredientStockStatusSummary.aspx.cs">
+      <DependentUpon>IngredientStockStatusSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyStoreAdmin\IngredientStockStatusSummary.aspx.designer.cs">
+      <DependentUpon>IngredientStockStatusSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyStoreAdmin\OrderHistory.aspx.cs">
+      <DependentUpon>OrderHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyStoreAdmin\OrderHistory.aspx.designer.cs">
+      <DependentUpon>OrderHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyStoreAdmin\OrderNew.aspx.cs">
+      <DependentUpon>OrderNew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyStoreAdmin\OrderNew.aspx.designer.cs">
+      <DependentUpon>OrderNew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyStoreAdmin\SAindex.aspx.cs">
+      <DependentUpon>SAindex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyStoreAdmin\SAindex.aspx.designer.cs">
+      <DependentUpon>SAindex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyStoreAdmin\SAIngredientBid.aspx.cs">
+      <DependentUpon>SAIngredientBid.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyStoreAdmin\SAIngredientBid.aspx.designer.cs">
+      <DependentUpon>SAIngredientBid.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyStoreAdmin\SAIngredientList.aspx.cs">
+      <DependentUpon>SAIngredientList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyStoreAdmin\SAIngredientList.aspx.designer.cs">
+      <DependentUpon>SAIngredientList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyStoreAdmin\StockReceived.aspx.cs">
+      <DependentUpon>StockReceived.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyStoreAdmin\StockReceived.aspx.designer.cs">
+      <DependentUpon>StockReceived.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlyStoreAdmin\Store.Master.cs">
+      <DependentUpon>Store.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlyStoreAdmin\Store.Master.designer.cs">
+      <DependentUpon>Store.Master</DependentUpon>
+    </Compile>
+    <Compile Include="OnlySupplier\BiddingAvailable.aspx.cs">
+      <DependentUpon>BiddingAvailable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlySupplier\BiddingAvailable.aspx.designer.cs">
+      <DependentUpon>BiddingAvailable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlySupplier\DeliveryScheduling.aspx.cs">
+      <DependentUpon>DeliveryScheduling.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlySupplier\DeliveryScheduling.aspx.designer.cs">
+      <DependentUpon>DeliveryScheduling.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlySupplier\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlySupplier\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlySupplier\sIngredientList.aspx.cs">
+      <DependentUpon>sIngredientList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlySupplier\sIngredientList.aspx.designer.cs">
+      <DependentUpon>sIngredientList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlySupplier\Supplier.Master.cs">
+      <DependentUpon>Supplier.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlySupplier\Supplier.Master.designer.cs">
+      <DependentUpon>Supplier.Master</DependentUpon>
+    </Compile>
+    <Compile Include="OnlySupplier\SupplierBidding.aspx.cs">
+      <DependentUpon>SupplierBidding.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlySupplier\SupplierBidding.aspx.designer.cs">
+      <DependentUpon>SupplierBidding.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlySupplier\SupplierBiddingAdd.aspx.cs">
+      <DependentUpon>SupplierBiddingAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlySupplier\SupplierBiddingAdd.aspx.designer.cs">
+      <DependentUpon>SupplierBiddingAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlySupplier\SupplierBiddingDetail.aspx.cs">
+      <DependentUpon>SupplierBiddingDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlySupplier\SupplierBiddingDetail.aspx.designer.cs">
+      <DependentUpon>SupplierBiddingDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlySupplier\SupplierBiddingN.aspx.cs">
+      <DependentUpon>SupplierBiddingN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlySupplier\SupplierBiddingN.aspx.designer.cs">
+      <DependentUpon>SupplierBiddingN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlySupplier\SupplierOrderHistory.aspx.cs">
+      <DependentUpon>SupplierOrderHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlySupplier\SupplierOrderHistory.aspx.designer.cs">
+      <DependentUpon>SupplierOrderHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlySupplier\SupplierProfile.aspx.cs">
+      <DependentUpon>SupplierProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlySupplier\SupplierProfile.aspx.designer.cs">
+      <DependentUpon>SupplierProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OrderCancellation.aspx.cs">
+      <DependentUpon>OrderCancellation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrderCancellation.aspx.designer.cs">
+      <DependentUpon>OrderCancellation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OrderReceipt.aspx.cs">
+      <DependentUpon>OrderReceipt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrderReceipt.aspx.designer.cs">
+      <DependentUpon>OrderReceipt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Products.aspx.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Products.aspx.designer.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProfileChangePassword.aspx.cs">
+      <DependentUpon>ProfileChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProfileChangePassword.aspx.designer.cs">
+      <DependentUpon>ProfileChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProfileDeliveryAddress.aspx.cs">
+      <DependentUpon>ProfileDeliveryAddress.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProfileDeliveryAddress.aspx.designer.cs">
+      <DependentUpon>ProfileDeliveryAddress.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProfileMemberPoint.aspx.cs">
+      <DependentUpon>ProfileMemberPoint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProfileMemberPoint.aspx.designer.cs">
+      <DependentUpon>ProfileMemberPoint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProfileMyOrders.aspx.cs">
+      <DependentUpon>ProfileMyOrders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProfileMyOrders.aspx.designer.cs">
+      <DependentUpon>ProfileMyOrders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProfileReports.aspx.cs">
+      <DependentUpon>ProfileReports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProfileReports.aspx.designer.cs">
+      <DependentUpon>ProfileReports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShoppingCart.aspx.cs">
+      <DependentUpon>ShoppingCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShoppingCart.aspx.designer.cs">
+      <DependentUpon>ShoppingCart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShoppingCart.cs" />
+    <Compile Include="SimpleImage.cs" />
+    <Compile Include="SystemForgotPassword.aspx.cs">
+      <DependentUpon>SystemForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemForgotPassword.aspx.designer.cs">
+      <DependentUpon>SystemForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SystemLogin.aspx.cs">
+      <DependentUpon>SystemLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemLogin.aspx.designer.cs">
+      <DependentUpon>SystemLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SystemLogout.aspx.cs">
+      <DependentUpon>SystemLogout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemLogout.aspx.designer.cs">
+      <DependentUpon>SystemLogout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SystemRegister.aspx.cs">
+      <DependentUpon>SystemRegister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemRegister.aspx.designer.cs">
+      <DependentUpon>SystemRegister.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SystemResetPassword.aspx.cs">
+      <DependentUpon>SystemResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemResetPassword.aspx.designer.cs">
+      <DependentUpon>SystemResetPassword.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="HNEnterpreneurDB.dbml.layout">
+      <DependentUpon>HNEnterpreneurDB.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\UserImg\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>35420</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:35420/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
